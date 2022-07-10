@@ -8,6 +8,8 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import com.crm.qa.base.TestBase;
+import com.crm.qa.pages.CalenderPage;
+import com.crm.qa.pages.CompanyPage;
 import com.crm.qa.pages.ContactsPage;
 import com.crm.qa.pages.HomePage;
 import com.crm.qa.pages.LoginPage;
@@ -17,6 +19,8 @@ public class HomePageTest extends TestBase {
 	LoginPage loginpage;
 	HomePage homepage;
 	ContactsPage contactpage;
+	CalenderPage calenderpage;
+	CompanyPage CompaniesPage;
 	
 	public HomePageTest() throws IOException {
 		super();
@@ -70,8 +74,33 @@ public class HomePageTest extends TestBase {
 	
 	public void validateClicksonContactPage() throws IOException {
 		
-		homepage.ClickOnContactsPage();
+		contactpage= homepage.ClickOnContactsPage();
+		System.out.println("Contact Page Current URL- " + driver.getCurrentUrl());
+		Assert.assertEquals(driver.getCurrentUrl(), prop.getProperty("contact_url"));
 	
+	}
+	
+	@Test(priority=6)
+	
+	public void validateCalanderPagelink() throws IOException {
+		
+		calenderpage = homepage.ClickOnCalenderPage();
+		System.out.println("Calender Page Current URL- " + driver.getCurrentUrl());
+		Assert.assertEquals(driver.getCurrentUrl(), prop.getProperty("calender_url"));
+
+	}
+	
+	@Test(priority = 7)
+	
+	public  void  validateCompaniesPageLink() throws IOException {
+		
+		CompaniesPage = homepage.ClickOnCompaniesPage();
+		System.out.println("Calender Page Current URL- " + driver.getCurrentUrl());
+		Assert.assertEquals(driver.getCurrentUrl(), prop.getProperty("companies_url"));
+		
+		
+		
+		
 	}
 	
 @AfterMethod

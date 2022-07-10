@@ -27,9 +27,39 @@ public class HomePage extends TestBase{
 		
 	@FindBy(xpath = "//span[contains(text(),'Contacts')]\r\n")
 	WebElement  ContactPageLink;
-
 	
-
+	@FindBy(xpath = "//span[contains(text(),'Calendar')]")
+	WebElement CalendarPageLink;
+	
+	@FindBy(xpath = "//span[contains(text(),'Companies')]")
+	WebElement CompaniesPageLink;
+	
+	@FindBy(xpath = "//span[contains(text(),'Deals')]")
+	WebElement DealsPageLink;
+	
+	@FindBy(xpath = "//span[contains(text(),'Tasks')]")
+	WebElement TasksPageLink;
+	
+	@FindBy(xpath = "//i[@class='comments icon']")
+	WebElement CasesPageLink;
+	
+	@FindBy(xpath = "//span[contains(text(),'Calls')]")
+	WebElement 	CallsPageLink;
+	
+	@FindBy(xpath = "//span[contains(text(),'Documents')]")
+	WebElement 	DocumentsPageLink;
+	
+	@FindBy(xpath = "//span[contains(text(),'Email')]")
+	WebElement 	EmailPageLink;
+	
+	@FindBy(xpath = "//span[contains(text(),'Campaigns')]")
+	WebElement 	CampaignsPageLink;
+	
+	@FindBy(xpath = "//span[contains(text(),'Forms')]")
+	WebElement 	FormsPageLink;
+	
+	
+	//Initialization of page factory 
 	public HomePage() throws IOException {
 		super();
 		PageFactory.initElements(driver, this);
@@ -74,15 +104,27 @@ public class HomePage extends TestBase{
 	return HomepageLink.size();
 	}
 	
-	
 	public ContactsPage  ClickOnContactsPage() throws IOException {
 		
 		ContactPageLink.click();
-		System.out.println("Contact page  object:- " +new ContactsPage());
 		return new ContactsPage();
 		
 		
 	}  
+	
+	public CalenderPage ClickOnCalenderPage() throws IOException {
+		
+		CalendarPageLink.click();
+		return new CalenderPage();
+		
+	}
+	
+public CompanyPage ClickOnCompaniesPage() throws IOException {
+		
+		CompaniesPageLink.click();
+		return new CompanyPage();
+		
+	}
 	
 
 }
