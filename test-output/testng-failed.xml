@@ -5,14 +5,23 @@
     <classes>
       <class name="com.crm.qa.testcases.HomePageTest">
         <methods>
-          <include name="validateClicksonContactPage"/>
+          <include name="validateDealsPagelink"/>
           <include name="validateCalanderPagelink"/>
+          <include name="validateTasksPageLink"/>
+          <include name="validateEmailPageLink"/>
           <include name="HomePageLinkCountValidation"/>
-          <include name="HomePageLogoValidation"/>
           <include name="tearDown"/>
+          <include name="validateDocumentsPageLink"/>
+          <include name="validateCasesPageLink"/>
+          <include name="HomePageTitleTest"/>
+          <include name="HomePageTextValidation"/>
+          <include name="validateClicksonContactPage"/>
+          <include name="validateFormPageLink"/>
+          <include name="validateCallsPageLink"/>
+          <include name="HomePageLogoValidation"/>
+          <include name="validateCampaignsPageLink"/>
           <include name="validateCompaniesPageLink"/>
           <include name="setup"/>
-          <include name="HomePageTextValidation"/>
         </methods>
       </class> <!-- com.crm.qa.testcases.HomePageTest -->
     </classes>

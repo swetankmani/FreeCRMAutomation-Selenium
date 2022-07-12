@@ -9,10 +9,18 @@ import org.testng.annotations.Test;
 
 import com.crm.qa.base.TestBase;
 import com.crm.qa.pages.CalenderPage;
+import com.crm.qa.pages.CallsPage;
+import com.crm.qa.pages.CampaignsPage;
+import com.crm.qa.pages.CasesPage;
 import com.crm.qa.pages.CompanyPage;
 import com.crm.qa.pages.ContactsPage;
+import com.crm.qa.pages.DealsPage;
+import com.crm.qa.pages.DocumentsPage;
+import com.crm.qa.pages.EmailPage;
+import com.crm.qa.pages.FormsPage;
 import com.crm.qa.pages.HomePage;
 import com.crm.qa.pages.LoginPage;
+import com.crm.qa.pages.TasksPage;
 
 public class HomePageTest extends TestBase {
 
@@ -21,6 +29,14 @@ public class HomePageTest extends TestBase {
 	ContactsPage contactpage;
 	CalenderPage calenderpage;
 	CompanyPage CompaniesPage;
+	DealsPage dealpage;
+	TasksPage taskpage;
+	CasesPage casepage;
+	CallsPage callspage;
+	DocumentsPage documentpage;
+	EmailPage emailpage;
+	CampaignsPage campaignspage;
+	FormsPage formspage;
 	
 	public HomePageTest() throws IOException {
 		super();
@@ -87,7 +103,6 @@ public class HomePageTest extends TestBase {
 		calenderpage = homepage.ClickOnCalenderPage();
 		System.out.println("Calender Page Current URL- " + driver.getCurrentUrl());
 		Assert.assertEquals(driver.getCurrentUrl(), prop.getProperty("calender_url"));
-
 	}
 	
 	@Test(priority = 7)
@@ -96,17 +111,91 @@ public class HomePageTest extends TestBase {
 		
 		CompaniesPage = homepage.ClickOnCompaniesPage();
 		System.out.println("Calender Page Current URL- " + driver.getCurrentUrl());
-		Assert.assertEquals(driver.getCurrentUrl(), prop.getProperty("companies_url"));
+		Assert.assertEquals(driver.getCurrentUrl(), prop.getProperty("companies_url"));		
+	}
+	
+	@Test(priority=8)
+	
+	public void validateDealsPagelink() throws IOException {
+		
+		dealpage = homepage.ClickOnDealPage();
+		System.out.println("Deal Page Current URL:- " + driver.getCurrentUrl());
+		Assert.assertEquals(driver.getCurrentUrl(), prop.getProperty("dealpage_url"));
+	} 
+	
+	@Test(priority = 9)
+	
+	public void  validateTasksPageLink() throws IOException {
 		
 		
-		
+		taskpage = homepage.ClickOnTasksPage();
+		System.out.println(driver.getCurrentUrl());
+		Assert.assertEquals(driver.getCurrentUrl(), prop.getProperty("taskpage_url"));
 		
 	}
+	
+	@Test(priority=10)
+	
+	public void  validateCasesPageLink() {
+		
+		casepage = homepage.ClickOnCasesPage();
+		System.out.println(driver.getCurrentUrl());
+		Assert.assertEquals(driver.getCurrentUrl(), prop.getProperty("casespage_url"));
+		
+	}
+	
+	@Test(priority=11)
+	
+	public void  validateCallsPageLink() {
+		
+		callspage = homepage.ClickOnCallsPage();
+		System.out.println(driver.getCurrentUrl());
+		Assert.assertEquals(driver.getCurrentUrl(), prop.getProperty("callspage_url"));
+	}
+	
+	@Test(priority=12)
+	
+	public  void validateDocumentsPageLink() {
+		
+		documentpage = homepage.ClickOnDocumentPage();
+		System.out.println(driver.getCurrentUrl());
+		Assert.assertEquals(driver.getCurrentUrl(), prop.getProperty("documentspage_url"));
+		
+	}
+	
+	@Test(priority=13)
+	
+	public void validateEmailPageLink() {
+		
+		emailpage = homepage.ClickOnEmailPage();
+		System.out.println(driver.getCurrentUrl());
+		Assert.assertEquals(driver.getCurrentUrl(), prop.getProperty("emailpage_url"));	
+	}
+	
+	@Test(priority=14)
+	
+	public void validateCampaignsPageLink() {
+		
+		campaignspage = homepage.ClickOnCampaignsPage();
+		System.out.println(driver.getCurrentUrl());
+		Assert.assertEquals(driver.getCurrentUrl(), prop.getProperty("campaignpage_url"));
+		
+	}
+	
+	@Test(priority=15)
+	
+public void validateFormPageLink() {
+		
+		formspage = homepage.ClickOnFormsPage();
+		System.out.println(driver.getCurrentUrl());
+		Assert.assertEquals(driver.getCurrentUrl(), prop.getProperty("formspage_url"));
+		
+	}
+	
 	
 @AfterMethod
 	
 	public void tearDown() {
-		
 		
 		driver.quit();
 	}

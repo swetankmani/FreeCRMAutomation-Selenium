@@ -126,5 +126,60 @@ public CompanyPage ClickOnCompaniesPage() throws IOException {
 		
 	}
 	
+public DealsPage ClickOnDealPage() throws IOException {
+	
+	DealsPageLink.click();
+	return new DealsPage();	
+}
+
+public TasksPage ClickOnTasksPage() throws IOException {
+	
+	TasksPageLink.click();
+	return new TasksPage();
+	
+}  
+
+public CasesPage  ClickOnCasesPage() {
+	
+	CasesPageLink.click();
+	return new CasesPage();
+	
+}
+
+public  CallsPage ClickOnCallsPage() {
+	
+	CallsPageLink.click();
+	return  new CallsPage();
+	
+}
+
+public DocumentsPage ClickOnDocumentPage() {
+	
+	DocumentsPageLink.click();
+	return  new DocumentsPage();
+} 
+
+public EmailPage ClickOnEmailPage() {
+	
+	EmailPageLink.click();
+	return new EmailPage();
+		
+}
+
+public CampaignsPage  ClickOnCampaignsPage() {
+	
+	CampaignsPageLink.click();
+	return new CampaignsPage();
+	
+}
+
+public  FormsPage  ClickOnFormsPage() {
+	
+	FormsPageLink.click();
+	return new FormsPage();
+	
+	
+}
+
 
 }
