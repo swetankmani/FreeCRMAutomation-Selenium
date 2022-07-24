@@ -54,7 +54,7 @@ public class HomePageTest extends TestBase {
 		
 	}
 	
-	@Test(priority=1)
+	@Test(priority=1)//passed
 	
 	public  void HomePageTitleTest() throws IOException {
 		
@@ -63,21 +63,21 @@ public class HomePageTest extends TestBase {
 		
 	}
 	
-	@Test(priority=2)
+	@Test(priority=2) //passed
 	
 	public void HomePageTextValidation() throws IOException {
 		
 		Assert.assertEquals(homepage.validateHomePageText(), "Contacts activity stream");
 	}
 	
-	@Test(priority=3)
+	@Test(priority=3) //passed
 	
 	public void HomePageLinkCountValidation() {
 		
 		Assert.assertEquals(homepage.validateHomePageLinks(), 28);
 	}
 	
-	@Test(priority=4)
+	@Test(priority=4) //passed
 	
 	public void HomePageLogoValidation() {
 		
@@ -86,7 +86,7 @@ public class HomePageTest extends TestBase {
 		
 	}
 	
-	@Test(priority=5)
+	@Test(priority=5) //passed
 	
 	public void validateClicksonContactPage() throws IOException {
 		
