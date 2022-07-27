@@ -16,13 +16,16 @@ public class ContactsPage extends TestBase {
 	
 	@FindBy(xpath = "//div[contains(@class,'ui header item mb5 light-black')]")
 	WebElement ContactText;
-	
-	//@FindBy()
-	
-	//div.menu-item-wrapper a.item span.item-text
-	
-	
-	
+	@FindBy(css="button.ui.linkedin.button>i.edit.icon")
+	WebElement cntctcreateBtn;
+	@FindBy(css="div.ui.header.item.mb5.light-black")
+	WebElement newcntctheader;
+	@FindBy(name="first_name")
+	WebElement frstname;
+	@FindBy(name="last_name")
+	WebElement lstname;
+	@FindBy(css="button.ui.linkedin.button")
+	WebElement svbtn;
 	
 	//Driver initialization
 
@@ -37,14 +40,18 @@ public class ContactsPage extends TestBase {
 	public boolean validationContactPage() {
 		
 	return	ContactText.isDisplayed();
-	driver.findElement(By.cssSelector(cssSelector))
 		
 	}
 	
-	public void ValidateAddPage() {
+	public ContactsPage ValidateAddPage(String fstnm,String lstnm) throws IOException {
 		
-		
-		
+		cntctcreateBtn.click();
+//		driver.findElement(By.name("first_name")).sendKeys("Mani");
+//		driver.findElement(By.name("last_name")).sendKeys("Tripathi");
+		frstname.sendKeys(fstnm);
+		lstname.sendKeys(lstnm);
+		svbtn.click();
+		return new ContactsPage();
 		
 	}
 	

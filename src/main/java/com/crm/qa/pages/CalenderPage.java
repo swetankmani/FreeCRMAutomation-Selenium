@@ -41,8 +41,8 @@ public class CalenderPage extends TestBase {
 		
 		return pageheader.getText();
 		
-		
-		
 	}
+	
+	
 
 }

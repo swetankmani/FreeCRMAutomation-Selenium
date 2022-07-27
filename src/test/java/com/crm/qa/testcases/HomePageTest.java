@@ -74,7 +74,7 @@ public class HomePageTest extends TestBase {
 	
 	public void HomePageLinkCountValidation() {
 		
-		Assert.assertEquals(homepage.validateHomePageLinks(), 28);
+		Assert.assertEquals(homepage.validateHomePageLinks(), prop.getProperty("HomePageLinkCount"));
 	}
 	
 	@Test(priority=4) //passed

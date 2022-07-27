@@ -2,12 +2,16 @@
   
 <suite name="Free CRM Application Test Automation Test Suite " verbose="1" >
   
+ <listeners>
+ <listener class-name="com.crm.qa.listeners.TestNGListener"></listener>
  
+ </listeners>
   <test name="Free  CRM Application TestCases">
     <classes>
       <class name="com.crm.qa.testcases.LoginPageTest"/>
       <class name="com.crm.qa.testcases.HomePageTest"/>
       <class name="com.crm.qa.testcases.ContactPageTest"/>
+      <class name="com.crm.qa.testcases.CalenderPageTest"/>
      
     </classes>
   </test>
