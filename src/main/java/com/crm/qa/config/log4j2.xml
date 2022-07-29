@@ -89,7 +89,7 @@
 	<Loggers>
 
 		<Logger name="com.crm.qa.testcases" additivity="false"
-			level="trace">
+			level="off">
 			<AppenderRef ref="traceLog" />
 			<AppenderRef ref="Console" />
 		</Logger>

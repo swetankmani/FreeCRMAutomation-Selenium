@@ -1,24 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Failed suite [Free CRM Application Test Automation Test Suite ]" guice-stage="DEVELOPMENT">
-  <listeners>
-    <listener class-name="com.crm.qa.listeners.TestNGListener"/>
-  </listeners>
-  <test thread-count="5" name="Free  CRM Application TestCases(failed)">
+<suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.crm.qa.testcases.HomePageTest">
+      <class name="com.crm.qa.testcases.LoginPageTest">
         <methods>
-          <include name="validateFormPageLink"/>
-          <include name="validateTasksPageLink"/>
-          <include name="validateEmailPageLink"/>
-          <include name="validateCallsPageLink"/>
+          <include name="SetUp"/>
           <include name="tearDown"/>
-          <include name="validateCampaignsPageLink"/>
-          <include name="validateDocumentsPageLink"/>
-          <include name="validateCasesPageLink"/>
-          <include name="setup"/>
+          <include name="validateLoginPageLinkText"/>
         </methods>
-      </class> <!-- com.crm.qa.testcases.HomePageTest -->
+      </class> <!-- com.crm.qa.testcases.LoginPageTest -->
     </classes>
-  </test> <!-- Free  CRM Application TestCases(failed) -->
-</suite> <!-- Failed suite [Free CRM Application Test Automation Test Suite ] -->
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->

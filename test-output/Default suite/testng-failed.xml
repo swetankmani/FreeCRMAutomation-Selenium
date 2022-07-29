@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.crm.qa.testcases.passwordResetPageTest">
+      <class name="com.crm.qa.testcases.LoginPageTest">
         <methods>
-          <include name="setup"/>
+          <include name="SetUp"/>
           <include name="tearDown"/>
-          <include name="validateForgetPageEmailadress"/>
+          <include name="validateLoginPageLinkText"/>
         </methods>
-      </class> <!-- com.crm.qa.testcases.passwordResetPageTest -->
+      </class> <!-- com.crm.qa.testcases.LoginPageTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
