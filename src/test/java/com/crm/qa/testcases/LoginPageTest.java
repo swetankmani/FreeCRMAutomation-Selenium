@@ -2,7 +2,9 @@ package com.crm.qa.testcases;
 
 import java.io.IOException;
 
+import org.apache.commons.mail.EmailException;
 import org.testng.Assert;
+import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -10,6 +12,8 @@ import org.testng.annotations.Test;
 import com.crm.qa.base.TestBase;
 import com.crm.qa.pages.HomePage;
 import com.crm.qa.pages.LoginPage;
+import com.crm.qa.util.ScreenshotUtil;
+import com.crm.qa.util.SendsimpleTextEmail;
 
 public class LoginPageTest extends  TestBase {
 	
@@ -25,7 +29,6 @@ public class LoginPageTest extends  TestBase {
 	public void  SetUp() throws IOException {
 		
 		initialization();
-		
 		loginpage = new LoginPage();
 		
 	}
@@ -46,8 +49,11 @@ public class LoginPageTest extends  TestBase {
 	
 	@AfterMethod
 	
-	public void tearDown() {
-		
+	public void tearDown(ITestResult result) throws EmailException {
+		if(ITestResult.FAILURE==result.getStatus()) {
+			ScreenshotUtil.captureScreenshot(driver, result.getName());	
+			//SendsimpleTextEmail.sendEmail();
+		}
 		
 		driver.quit();
 	}

@@ -3,6 +3,7 @@ package com.crm.qa.testcases;
 import java.io.IOException;
 
 import org.testng.Assert;
+import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -11,6 +12,7 @@ import com.crm.qa.base.TestBase;
 import com.crm.qa.pages.CalenderPage;
 import com.crm.qa.pages.HomePage;
 import com.crm.qa.pages.LoginPage;
+import com.crm.qa.util.ScreenshotUtil;
 
 public class CalenderPageTest extends TestBase{
 	
@@ -57,10 +59,14 @@ public class CalenderPageTest extends TestBase{
 	
 @AfterMethod
 	
-	public void tearDown() {
+	public void tearDown(ITestResult result) {
+		if(ITestResult.FAILURE==result.getStatus()) {
+			ScreenshotUtil.captureScreenshot(driver, result.getName());	
+		}
 		
 		driver.quit();
 	}
+	
 
 	
 	

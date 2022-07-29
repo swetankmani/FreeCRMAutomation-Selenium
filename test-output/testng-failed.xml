@@ -8,8 +8,14 @@
     <classes>
       <class name="com.crm.qa.testcases.HomePageTest">
         <methods>
+          <include name="validateFormPageLink"/>
+          <include name="validateTasksPageLink"/>
+          <include name="validateEmailPageLink"/>
+          <include name="validateCallsPageLink"/>
           <include name="tearDown"/>
-          <include name="HomePageLinkCountValidation"/>
+          <include name="validateCampaignsPageLink"/>
+          <include name="validateDocumentsPageLink"/>
+          <include name="validateCasesPageLink"/>
           <include name="setup"/>
         </methods>
       </class> <!-- com.crm.qa.testcases.HomePageTest -->
