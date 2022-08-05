@@ -14,7 +14,7 @@ import com.crm.qa.base.TestBase;
 public class LoginPage extends TestBase {
 
 	//Page Factory = OR 
-	@FindBy(xpath="//a[contains(text(),'Login')]")
+	@FindBy(css="a.btn.btn-primary.btn-xs-2.btn-shadow.btn-rect.btn-icon.btn-icon-left")
 	WebElement Loginlnk;
 
 	@FindBy(xpath="//input[@name='email']")

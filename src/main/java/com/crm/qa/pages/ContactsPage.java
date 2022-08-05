@@ -6,6 +6,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.AfterMethod;
 
 import com.crm.qa.base.TestBase;
@@ -26,6 +27,8 @@ public class ContactsPage extends TestBase {
 	WebElement lstname;
 	@FindBy(css="button.ui.linkedin.button")
 	WebElement svbtn;
+	@FindBy(css="div.ui.selection.upward.dropdown")
+	WebElement statusdrpdwn;
 	
 	//Driver initialization
 
@@ -46,10 +49,10 @@ public class ContactsPage extends TestBase {
 	public ContactsPage ValidateAddPage(String fstnm,String lstnm) throws IOException {
 		
 		cntctcreateBtn.click();
-//		driver.findElement(By.name("first_name")).sendKeys("Mani");
-//		driver.findElement(By.name("last_name")).sendKeys("Tripathi");
 		frstname.sendKeys(fstnm);
 		lstname.sendKeys(lstnm);
+	//	Select s= new  Select(driver.findElement(By.xpath("//*[@name='status']/div[@class='divider default text']")));	
+	//	s.selectByValue("New");
 		svbtn.click();
 		return new ContactsPage();
 		
